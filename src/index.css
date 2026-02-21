@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-pastel-mint: #f0fdf4;
+  --color-pastel-blue: #eff6ff;
+  --color-pastel-lavender: #f5f3ff;
+  
+  --color-brand-blue: #3b82f6;
+  --color-brand-green: #22c55e;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-slate-900 font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
