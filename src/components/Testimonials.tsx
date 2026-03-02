@@ -1,172 +1,156 @@
-import React, { useRef, useEffect } from 'react';
-import { motion } from 'motion/react';
-import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import React from "react";
+import { motion } from "motion/react";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    id: '1',
-    title: (
-      <>
-        <span className="text-brand-blue">600,000+</span> businesses trust our SMB offerings
-      </>
-    ),
-    quote: "Earlier I used to call multiple customers, track my bank account or check messages for payments. Now I can send UPI links in reminders and customers can pay from home. Compliance is easy.",
-    name: 'Shalini Prasad',
-    role: 'Business Owner, Printing Goods',
-    image: 'https://picsum.photos/seed/shalini/100/100',
-    link: 'Explore products for Small Businesses'
+    name: "Shalini Prasad",
+    role: "Printing Business Owner",
+    quote:
+      "E-Filing Cart made GST filing extremely easy. I save hours every month.",
+    image: "https://picsum.photos/seed/shalini/100",
   },
   {
-    id: '2',
-    title: (
-      <>
-        Over <span className="text-brand-blue">1,200</span> enterprises use our compliance stack
-      </>
-    ),
-    quote: "1XFILING has made core GST returns simple and easy for us. Instead of taking 7 to 8 days to do reconciliation, now it's just a matter of hours. The people there assist us at any given point in time.",
-    name: 'Manivannan P',
-    role: 'Group Manager, Titan',
-    image: 'https://picsum.photos/seed/manivannan/100/100',
-    link: 'Explore our products for Large Enterprises'
+    name: "Manivannan P",
+    role: "Operations Manager",
+    quote:
+      "Compliance processes that took days now take just hours. Highly reliable platform.",
+    image: "https://picsum.photos/seed/manivannan/100",
   },
   {
-    id: '3',
-    title: (
-      <>
-        Over <span className="text-brand-blue">5 million</span> tax payers have filed with us
-      </>
-    ),
-    quote: "I have been using 1XFILING's DIY e-filing of ITR for last 3 years. I use it for my entire family's income tax returns. Very effective and least time consuming.",
-    name: 'Mr. Manmohan',
-    role: 'Tax Payer, Kochi, Kerala',
-    image: 'https://picsum.photos/seed/manmohan/100/100',
-    link: 'File ITRs yourself or seek expert assistance'
-  }
+    name: "Manmohan",
+    role: "Individual Taxpayer",
+    quote:
+      "Fast, reliable, and simple. Filing my income tax returns is completely stress-free now.",
+    image: "https://picsum.photos/seed/manmohan/100",
+  },
+  {
+    name: "Rohit Sharma",
+    role: "Startup Founder",
+    quote:
+      "Company registration was completed quickly with proper expert guidance.",
+    image: "https://picsum.photos/seed/rohit/100",
+  },
+  {
+    name: "Priya Mehta",
+    role: "Business Consultant",
+    quote:
+      "Compliance reminders ensure I never miss important GST or ROC deadlines.",
+    image: "https://picsum.photos/seed/priya/100",
+  },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
+const TestimonialCard = ({ item }: { item: typeof testimonials[number] }) => (
+  <motion.div
+    whileHover={{ y: -8 }}
+    className="
+      min-w-[340px]
+      max-w-[380px]
+      bg-white/80 backdrop-blur-xl
+      border border-slate-200
+      rounded-3xl
+      p-8
+      shadow-sm
+      hover:shadow-2xl
+      transition-all duration-300
+    "
+  >
+    {/* Stars */}
+    <div className="flex gap-1 text-amber-400 mb-5">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star key={i} size={16} fill="currentColor" />
+      ))}
+    </div>
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
+    {/* Quote */}
+    <p className="text-slate-700 leading-relaxed text-base">
+      “{item.quote}”
+    </p>
+
+    {/* User */}
+    <div className="mt-8 flex items-center gap-4">
+      <img
+        src={item.image}
+        alt={item.name}
+        className="w-12 h-12 rounded-full object-cover ring-2 ring-white shadow"
+      />
+
+      <div>
+        <div className="font-semibold text-slate-900">
+          {item.name}
+        </div>
+        <div className="text-sm text-slate-500">
+          {item.role}
+        </div>
+      </div>
+    </div>
+  </motion.div>
+);
 
 export const Testimonials = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (scrollRef.current) {
-        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
-        const maxScroll = scrollWidth - clientWidth;
-        
-        if (scrollLeft >= maxScroll - 10) {
-          scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          scrollRef.current.scrollTo({ left: scrollLeft + clientWidth, behavior: 'smooth' });
-        }
-      }
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const { scrollLeft, clientWidth } = scrollRef.current;
-      const scrollTo = direction === 'left' ? scrollLeft - clientWidth : scrollLeft + clientWidth;
-      scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
-    }
-  };
+  const duplicated = [...testimonials, ...testimonials];
 
   return (
-    <section className="bg-slate-50/50 py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          <h2 className="text-4xl font-black text-slate-800 lg:text-5xl">
-            Trusted by experts and businesses
-          </h2>
-          <div className="hidden gap-4 lg:flex">
-            <button 
-              onClick={() => scroll('left')}
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-400 shadow-sm transition-all hover:text-slate-900 hover:shadow-md"
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </button>
-            <button 
-              onClick={() => scroll('right')}
-              className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-slate-400 shadow-sm transition-all hover:text-slate-900 hover:shadow-md"
-            >
-              <ChevronRight className="h-6 w-6" />
-            </button>
-          </div>
-        </div>
+    <section className="relative py-28 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
 
-        <motion.div 
-          ref={scrollRef}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          className="mt-16 flex gap-6 overflow-x-auto pb-12 scrollbar-hide snap-x snap-mandatory px-4"
-        >
-          {testimonials.map((testimonial) => (
-            <motion.div
-              key={testimonial.id}
-              variants={itemVariants}
-              className="relative min-w-[280px] flex-shrink-0 snap-start overflow-hidden rounded-2xl border border-slate-100 bg-white p-7 shadow-sm transition-all hover:shadow-xl md:min-w-[360px]"
-            >
-              {/* Top Accent Line */}
-              <div className="absolute top-0 left-0 h-1 w-full bg-brand-blue" />
-              
-              <h3 className="text-lg font-bold leading-tight text-slate-900 md:text-xl">
-                {testimonial.title}
-              </h3>
-              
-              <p className="mt-5 text-sm leading-relaxed text-slate-600 md:text-base">
-                {testimonial.quote}
-              </p>
+      {/* Soft Brand Glow */}
+      <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[600px] h-[300px] bg-brand-blue/10 blur-[120px] pointer-events-none" />
 
-              <div className="mt-8 flex items-center gap-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="h-10 w-10 rounded-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-                <div>
-                  <div className="text-sm font-bold text-slate-900">{testimonial.name}</div>
-                  <div className="text-[10px] uppercase tracking-wider text-slate-500">{testimonial.role}</div>
-                </div>
-              </div>
+      <div className="relative max-w-7xl mx-auto px-6 text-center mb-20">
 
-              <div className="mt-8">
-                <a 
-                  href="#" 
-                  className="group inline-flex items-center gap-2 text-xs font-bold text-brand-blue transition-all hover:gap-3"
-                >
-                  {testimonial.link}
-                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+        <span className="inline-block bg-brand-blue/10 text-brand-blue px-4 py-1 rounded-full text-sm font-semibold mb-6">
+          Client Testimonials
+        </span>
+
+        <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">
+          Trusted by 5,000+ Businesses Across India
+        </h2>
+
+        <p className="mt-5 text-lg text-slate-600 max-w-2xl mx-auto">
+          Real experiences from founders, professionals, and enterprises
+          using <strong>E-Filing Cart</strong> for company registration,
+          GST filing, and complete compliance management.
+        </p>
       </div>
+
+      {/* Fade edges */}
+      <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-10" />
+      <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-10" />
+
+      {/* Row 1 */}
+      <motion.div
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          duration: 35,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+        className="flex gap-10 w-max mb-10"
+      >
+        {duplicated.map((item, i) => (
+          <div key={`row1-${i}`}>
+            <TestimonialCard item={item} />
+          </div>
+        ))}
+      </motion.div>
+
+      {/* Row 2 */}
+      <motion.div
+        animate={{ x: ["-50%", "0%"] }}
+        transition={{
+          duration: 35,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+        className="flex gap-10 w-max"
+      >
+        {duplicated.map((item, i) => (
+          <div key={`row2-${i}`}>
+            <TestimonialCard item={item} />
+          </div>
+        ))}
+      </motion.div>
+
     </section>
   );
 };

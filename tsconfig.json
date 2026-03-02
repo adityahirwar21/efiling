@@ -20,7 +20,14 @@
         "./*"
       ]
     },
+    
     "allowImportingTsExtensions": true,
     "noEmit": true
-  }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/declarations.d.ts"  // <--- Ye line add karein
+  ]
 }

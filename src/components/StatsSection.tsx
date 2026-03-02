@@ -1,95 +1,125 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { CloudUpload, Factory, Wallet, Store, FileCheck } from 'lucide-react';
+import React from "react";
+import CountUp from "react-countup";
+import { motion } from "motion/react";
+import {
+  CloudUpload,
+  Factory,
+  Wallet,
+  Store,
+  FileCheck
+} from "lucide-react";
 
 const stats = [
   {
-    value: '250M +',
-    label: 'invoices uploaded',
-    icon: <CloudUpload className="h-6 w-6 text-blue-400" />,
-    bgColor: 'bg-blue-50',
+    value: 120000,
+    suffix: "+",
+    label: "Compliance Documents Processed",
+    icon: CloudUpload
   },
   {
-    value: '6M +',
-    label: 'Businesses visible',
-    icon: <Factory className="h-6 w-6 text-purple-400" />,
-    bgColor: 'bg-purple-50',
+    value: 1800,
+    suffix: "+",
+    label: "Businesses Served",
+    icon: Factory
   },
   {
-    value: '$300B +',
-    label: 'trade value filled',
-    icon: <Wallet className="h-6 w-6 text-emerald-400" />,
-    bgColor: 'bg-emerald-50',
+    value: 480,
+    suffix: "Cr+",
+    prefix: "₹",
+    label: "Compliance Value Managed",
+    icon: Wallet
   },
   {
-    value: '35,000 +',
-    label: 'retail investors',
-    icon: <Store className="h-6 w-6 text-pink-400" />,
-    bgColor: 'bg-pink-50',
+    value: 800,
+    suffix: "+",
+    label: "Active Founders & Startups",
+    icon: Store
   },
   {
-    value: '6M +',
-    label: 'tax returns filed',
-    icon: <FileCheck className="h-6 w-6 text-orange-400" />,
-    bgColor: 'bg-orange-50',
-  },
+    value: 95000,
+    suffix: "+",
+    label: "GST & Income Tax Returns Filed",
+    icon: FileCheck
+  }
 ];
 
 export const StatsSection = () => {
   return (
-    <section className="bg-white py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          {/* Left Content */}
-          <div className="max-w-xl">
-            <h2 className="text-5xl font-black tracking-tight text-slate-900 lg:text-6xl">
-              Numbers don't <br /> lie!
-            </h2>
-            <p className="mt-8 text-lg leading-relaxed text-slate-500">
-              Products that perform seamlessly during any kind of surge, so you don't have to worry about uptime and reliability. Ingest and process any amount of data any time of the month, smoothly.
-            </p>
-          </div>
+    <section className="relative py-24 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
 
-          {/* Right Stats Grid */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            <div className="space-y-6">
-              {stats.slice(0, 3).map((stat, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="relative rounded-3xl border border-slate-50 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
-                >
-                  <div className="text-3xl font-black text-slate-900">{stat.value}</div>
-                  <div className="mt-1 text-slate-500">{stat.label}</div>
-                  <div className={`absolute bottom-6 right-6 flex h-12 w-12 items-center justify-center rounded-2xl ${stat.bgColor}`}>
-                    {stat.icon}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            <div className="mt-12 space-y-6 sm:mt-24">
-              {stats.slice(3).map((stat, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: (idx + 3) * 0.1 }}
-                  className="relative rounded-3xl border border-slate-50 bg-white p-8 shadow-sm transition-shadow hover:shadow-md"
-                >
-                  <div className="text-3xl font-black text-slate-900">{stat.value}</div>
-                  <div className="mt-1 text-slate-500">{stat.label}</div>
-                  <div className={`absolute bottom-6 right-6 flex h-12 w-12 items-center justify-center rounded-2xl ${stat.bgColor}`}>
-                    {stat.icon}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+      {/* subtle glow */}
+      <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[600px] h-[300px] bg-brand-blue/10 blur-[120px] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-6">
+
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto"
+        >
+          <span className="inline-block bg-brand-blue/10 text-brand-blue px-4 py-1 rounded-full text-sm font-semibold mb-4">
+            Nationwide Trust
+          </span>
+
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900">
+            Built on Trust. <span className="text-brand-blue">Backed by Results.</span>
+          </h2>
+
+          <p className="mt-5 text-slate-600 text-lg leading-relaxed">
+            From startups to growing enterprises, thousands rely on 
+            <strong> E-Filing Cart </strong>
+            for company registration, GST filing, tax returns, and end-to-end compliance management.
+          </p>
+        </motion.div>
+
+        {/* Stats Grid */}
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-14 gap-x-10">
+
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center relative"
+              >
+                {/* icon */}
+                <div className="mx-auto mb-6 w-14 h-14 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                  <Icon size={26} />
+                </div>
+
+                {/* number */}
+                <div className="text-3xl lg:text-4xl font-bold text-slate-900">
+                  {stat.prefix}
+                  <CountUp
+                    end={stat.value}
+                    duration={2.5}
+                    separator=","
+                  />
+                  {stat.suffix}
+                </div>
+
+                {/* label */}
+                <div className="mt-3 text-slate-500 text-sm font-medium">
+                  {stat.label}
+                </div>
+
+                {/* vertical divider for desktop */}
+                {index !== stats.length - 1 && (
+                  <div className="hidden lg:block absolute right-[-20px] top-1/2 -translate-y-1/2 w-px h-16 bg-slate-200" />
+                )}
+              </motion.div>
+            );
+          })}
+
         </div>
+
       </div>
     </section>
   );

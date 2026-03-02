@@ -8,7 +8,7 @@
   --color-pastel-blue: #eff6ff;
   --color-pastel-lavender: #f5f3ff;
   
-  --color-brand-blue: #3b82f6;
+  --color-brand-blue: #0337a8;
   --color-brand-green: #22c55e;
 }
 
@@ -25,5 +25,14 @@
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
   }
 }

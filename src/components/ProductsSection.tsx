@@ -1,90 +1,114 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import React from "react";
+import { motion } from "motion/react";
+import { ArrowRight, User, Briefcase, Building2, Landmark } from "lucide-react";
 
 const products = [
   {
-    title: 'For Individuals',
-    description: 'For salaried, self employed professionals.',
-    bgColor: 'bg-indigo-50',
-    img: 'https://picsum.photos/seed/person1/300/300',
+    title: "Individuals",
+    description: "ITR filing, capital gains advisory, tax planning & expert CA support.",
+    icon: User
   },
   {
-    title: 'For Tax Experts',
-    description: 'File income tax returns in 3 min, invest and grow your wealth.',
-    bgColor: 'bg-slate-50',
-    img: 'https://picsum.photos/seed/person2/300/300',
+    title: "Tax Professionals",
+    description: "Manage clients efficiently, automate returns & scale your practice.",
+    icon: Briefcase
   },
   {
-    title: 'For SMEs',
-    description: 'For less than ₹50Cr turnover businesses.',
-    bgColor: 'bg-emerald-50',
-    img: 'https://picsum.photos/seed/person3/300/300',
+    title: "SMEs & Startups",
+    description: "Company registration, GST, payroll & end-to-end compliance support.",
+    icon: Building2
   },
   {
-    title: 'For Enterprise',
-    description: 'Explore SME suite including Invoicing and TDS solution.',
-    bgColor: 'bg-slate-50',
-    img: 'https://picsum.photos/seed/person4/300/300',
-  },
+    title: "Enterprises",
+    description: "Advanced compliance automation, strategic advisory & dedicated experts.",
+    icon: Landmark
+  }
 ];
 
 export const ProductsSection = () => {
   return (
-    <section className="bg-white py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
-          {/* Left Grid */}
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {products.map((product, idx) => (
+    <section className="relative py-12 bg-white overflow-hidden">
+
+      {/* subtle glow */}
+      <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[600px] h-[300px] bg-brand-blue/10 blur-[120px] pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-6">
+
+        {/* Center Heading */}
+        <div className="text-center max-w-3xl mx-auto">
+
+          <span className="inline-block bg-brand-blue/10 text-brand-blue px-4 py-1 rounded-full text-sm font-semibold mb-6">
+            Solutions
+          </span>
+
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
+            Compliance Solutions for
+            <span className="block text-brand-blue">
+              Every Stage of Your Business
+            </span>
+          </h2>
+
+          <p className="mt-6 text-lg text-slate-600 leading-relaxed">
+            Whether you're filing your first tax return or managing large-scale
+            corporate compliance, <strong>E-Filing Cart</strong> adapts and scales with your business needs.
+          </p>
+
+        </div>
+
+        {/* Cards */}
+        <div className="mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          {products.map((product, index) => {
+            const Icon = product.icon;
+
+            return (
               <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className={`group relative flex h-[320px] flex-col justify-between overflow-hidden rounded-[32px] ${product.bgColor} p-8 transition-all hover:shadow-xl`}
+                transition={{ delay: index * 0.08 }}
+                className="
+                  group relative
+                  bg-white
+                  border border-slate-200
+                  rounded-3xl
+                  p-8
+                  shadow-sm
+                  hover:shadow-2xl
+                  hover:-translate-y-2
+                  transition-all duration-300
+                "
               >
-                <div className="relative z-10">
-                  <p className="text-sm font-medium text-slate-500 opacity-0 transition-opacity group-hover:opacity-100">
-                    {product.description}
-                  </p>
-                  <div className="mt-4 h-32 w-full overflow-hidden rounded-2xl">
-                    <img 
-                      src={product.img} 
-                      alt={product.title}
-                      className="h-full w-full object-cover mix-blend-multiply transition-transform duration-500 group-hover:scale-110"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                </div>
-                
-                <div className="relative z-10 flex items-end justify-between">
-                  <h3 className="text-2xl font-black text-slate-900">
-                    {product.title.split(' ').map((word, i) => (
-                      <span key={i} className="block">{word}</span>
-                    ))}
-                  </h3>
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-slate-900 shadow-sm transition-transform group-hover:translate-x-1">
-                    <ArrowRight className="h-5 w-5" />
-                  </div>
+
+                {/* Icon */}
+                <div className="w-14 h-14 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue mb-6 group-hover:scale-110 transition">
+                  <Icon size={26} />
                 </div>
 
-                {/* Decorative background elements to mimic the illustration style */}
-                <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-white/20 blur-2xl" />
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-slate-900">
+                  For {product.title}
+                </h3>
+
+                {/* Description */}
+                <p className="mt-3 text-slate-600 text-sm leading-relaxed">
+                  {product.description}
+                </p>
+
+                {/* CTA */}
+                <div className="mt-6 flex items-center text-brand-blue font-semibold text-sm group-hover:translate-x-1 transition">
+                  Explore Solutions
+                  <ArrowRight className="ml-2 w-4 h-4" />
+                </div>
+
+                {/* subtle hover border glow */}
+                <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-brand-blue/30 transition pointer-events-none"></div>
+
               </motion.div>
-            ))}
-          </div>
+            );
+          })}
 
-          {/* Right Content */}
-          <div className="max-w-xl">
-            <h2 className="text-5xl font-black tracking-tight text-slate-900 lg:text-7xl">
-              Products for <br /> everyone
-            </h2>
-            <p className="mt-8 text-xl leading-relaxed text-slate-500">
-              Built for scale, made by experts and secure by design. Bringing you maximum tax savings, unmatched speed and complete peace of mind.
-            </p>
-          </div>
         </div>
       </div>
     </section>

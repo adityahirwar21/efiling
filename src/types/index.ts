@@ -10,6 +10,7 @@ export interface Step {
 }
 
 export interface Service {
+  faqs: any;
   id: string;
   name: string;
   category: string;

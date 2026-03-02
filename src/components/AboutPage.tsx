@@ -1,195 +1,258 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { Target, Eye, Award, Shield, Users, Rocket, CheckCircle2 } from 'lucide-react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  Cpu,
+  Zap,
+  Bot,
+  Plus,
+  Minus,
+  Quote,
+  Activity,
+  FileText,
+  PieChart,
+  Scale,
+  Building,
+  Fingerprint,
+  Lock,
+  ArrowRight
+} from "lucide-react";
 
 const stats = [
-  { label: 'Years of Excellence', value: '10+' },
-  { label: 'Happy Clients', value: '50,000+' },
-  { label: 'Expert Professionals', value: '100+' },
-  { label: 'Cities Covered', value: '500+' },
+  { label: "AI Filing Precision", value: "99.9%" },
+  { label: "Expert Professionals", value: "50+" },
+  { label: "Faster Processing", value: "10x" },
+  { label: "Secure Data Points", value: "2M+" }
 ];
 
-const values = [
+const coreValues = [
   {
-    icon: <Shield className="h-6 w-6" />,
-    title: 'Trust & Integrity',
-    description: 'We believe in absolute transparency and ethical practices in every filing we handle.'
+    title: "AI-Driven Intelligence",
+    desc: "We don’t just file returns — our AI continuously optimizes financial data for greater compliance accuracy.",
+    icon: <Cpu className="text-blue-600" />,
+    color: "bg-blue-50"
   },
   {
-    icon: <Rocket className="h-6 w-6" />,
-    title: 'Innovation',
-    description: 'Leveraging cutting-edge technology to make complex legal processes simple and accessible.'
+    title: "Radical Transparency",
+    desc: "No hidden charges. Clear pricing, real-time dashboards, and complete visibility into every process.",
+    icon: <PieChart className="text-emerald-600" />,
+    color: "bg-emerald-50"
   },
   {
-    icon: <Users className="h-6 w-6" />,
-    title: 'Customer First',
-    description: 'Our success is measured by the growth and satisfaction of the businesses we serve.'
+    title: "Enterprise-Grade Security",
+    desc: "Your financial data is protected with bank-level encryption and strict compliance standards.",
+    icon: <Lock className="text-indigo-600" />,
+    color: "bg-indigo-50"
   }
 ];
 
 export const AboutPage = () => {
+  const [activeFaq, setActiveFaq] = useState<number | null>(0);
+
   return (
-    <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-slate-900 py-24 lg:py-32">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute -left-1/4 -top-1/4 h-96 w-96 rounded-full bg-brand-blue blur-3xl" />
-          <div className="absolute -right-1/4 -bottom-1/4 h-96 w-96 rounded-full bg-brand-green blur-3xl" />
+    <div className="bg-[#F8FAFC] text-slate-900">
+
+      {/* ================= HERO ================= */}
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
+
+        <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
         </div>
-        
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1 
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl font-black tracking-tight text-white lg:text-7xl"
+            className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-2 rounded-full text-blue-700 text-xs font-bold uppercase tracking-[0.2em] mb-8"
           >
-            Simplifying Business <br /> for India's Entrepreneurs
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="mx-auto mt-8 max-w-3xl text-xl text-slate-400"
-          >
-            1XFILING was born out of a simple idea: that starting and running a business in India shouldn't be a legal nightmare. We're on a mission to automate compliance and empower growth.
-          </motion.p>
-        </div>
-      </section>
+            <Bot size={14} /> AI-Powered Compliance Platform
+          </motion.div>
 
-      {/* Stats Section */}
-      <section className="relative -mt-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 gap-4 rounded-[32px] bg-white p-8 shadow-2xl lg:grid-cols-4 lg:p-12">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-black text-brand-blue lg:text-5xl">{stat.value}</div>
-                <div className="mt-2 text-sm font-bold uppercase tracking-widest text-slate-500">{stat.label}</div>
-              </div>
-            ))}
+          <h1 className="text-5xl lg:text-8xl font-black text-slate-900 leading-tight tracking-tighter mb-8">
+            The Future of <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+              Smart Compliance
+            </span>
+          </h1>
+
+          <p className="text-xl text-slate-500 max-w-3xl mx-auto leading-relaxed mb-12">
+            E-Filing Cart is a next-generation compliance platform redefining how Indian businesses manage
+            GST, Income Tax, and Corporate filings through AI-powered automation and expert validation.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-6">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-black text-lg transition-all shadow-xl shadow-blue-200 flex items-center gap-2">
+              Explore Platform <ArrowRight size={20} />
+            </button>
+            <button className="bg-white border border-slate-200 text-slate-700 px-10 py-5 rounded-2xl font-black text-lg hover:bg-slate-50 transition-all">
+              Meet Our Experts
+            </button>
           </div>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-4xl font-black text-slate-900 lg:text-5xl">Our Story</h2>
-              <p className="mt-6 text-lg leading-relaxed text-slate-600">
-                Founded in 2014, 1XFILING started as a small team of chartered accountants and lawyers who saw the struggles of first-time entrepreneurs. The endless paperwork, confusing regulations, and lack of transparent pricing were holding back India's potential.
-              </p>
-              <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                We decided to build a technology-first platform that could handle everything from company incorporation to complex GST reconciliations. Today, we are proud to be the compliance partner for over 50,000 businesses across the country.
-              </p>
-              
-              <div className="mt-10 space-y-4">
-                {[
-                  'ISO 27001 Certified for Data Security',
-                  'Recognized by Startup India',
-                  'Trusted by 1,200+ Enterprises',
-                  'Pan-India Presence'
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <CheckCircle2 className="h-6 w-6 text-brand-green" />
-                    <span className="text-lg font-bold text-slate-700">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-            <div className="relative">
-              <img 
-                src="https://picsum.photos/seed/growth/800/600" 
-                alt="Our Journey" 
-                className="rounded-[40px] shadow-2xl"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute -bottom-8 -right-8 rounded-3xl bg-brand-blue p-8 text-white shadow-xl lg:block hidden">
-                <Award className="h-12 w-12 mb-4" />
-                <div className="text-2xl font-black">Award Winning</div>
-                <div className="text-sm opacity-80">Legal-Tech Platform 2025</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="bg-slate-50 py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
-            <div className="rounded-[40px] bg-white p-12 shadow-sm">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-blue/10 text-brand-blue">
-                <Target className="h-8 w-8" />
-              </div>
-              <h3 className="mt-8 text-3xl font-black text-slate-900">Our Mission</h3>
-              <p className="mt-4 text-xl leading-relaxed text-slate-600">
-                To make business compliance so seamless that entrepreneurs can focus 100% of their energy on building their products and serving their customers.
-              </p>
-            </div>
-            <div className="rounded-[40px] bg-white p-12 shadow-sm">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-green/10 text-brand-green">
-                <Eye className="h-8 w-8" />
-              </div>
-              <h3 className="mt-8 text-3xl font-black text-slate-900">Our Vision</h3>
-              <p className="mt-4 text-xl leading-relaxed text-slate-600">
-                To become the operating system for Indian businesses, where every legal and financial need is met with a single click.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="py-24 lg:py-32">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-black text-slate-900 lg:text-5xl">The Values that Drive Us</h2>
-          <p className="mt-4 text-xl text-slate-600">Our culture is built on a foundation of excellence and empathy.</p>
-          
-          <div className="mt-20 grid grid-cols-1 gap-12 lg:grid-cols-3">
-            {values.map((value, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex flex-col items-center"
-              >
-                <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-slate-50 text-brand-blue shadow-inner">
-                  {value.icon}
+      {/* ================= STATS ================= */}
+      <section className="relative z-20 -mt-12">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 bg-white border border-slate-100 rounded-[3rem] p-12 shadow-2xl shadow-slate-200/50">
+            {stats.map((s, i) => (
+              <div key={i} className="text-center">
+                <div className="text-4xl lg:text-5xl font-black text-blue-600 mb-2">
+                  {s.value}
                 </div>
-                <h4 className="mt-8 text-2xl font-bold text-slate-900">{value.title}</h4>
-                <p className="mt-4 text-lg text-slate-600 leading-relaxed">{value.description}</p>
-              </motion.div>
+                <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                  {s.label}
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-[48px] bg-brand-blue p-12 text-center lg:p-24">
-            <h2 className="text-4xl font-black text-white lg:text-6xl">Ready to grow your business?</h2>
-            <p className="mx-auto mt-8 max-w-2xl text-xl text-blue-100">
-              Join thousands of successful entrepreneurs who trust 1XFILING for their business compliance.
+      {/* ================= STORY ================= */}
+      <section className="py-32">
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+
+          <div>
+            <h2 className="text-blue-600 font-black uppercase tracking-widest text-sm mb-6">
+              Our Vision
+            </h2>
+            <h3 className="text-4xl lg:text-6xl font-black text-slate-900 leading-tight mb-8">
+              Why we built <br /> E-Filing Cart
+            </h3>
+
+            <p className="text-lg text-slate-500 mb-8 leading-relaxed">
+              Indian businesses face complex compliance requirements, strict deadlines, and constant regulatory changes.
+              We built E-Filing Cart to simplify this complexity using technology and automation.
             </p>
-            <div className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <button className="rounded-2xl bg-white px-10 py-5 text-lg font-bold text-brand-blue shadow-xl transition-all hover:scale-105 active:scale-95">
-                Get Started Now
-              </button>
-              <button className="rounded-2xl border-2 border-white/30 px-10 py-5 text-lg font-bold text-white backdrop-blur-md transition-all hover:bg-white/10">
-                Talk to an Expert
-              </button>
+
+            <p className="text-lg text-slate-500 mb-10 leading-relaxed font-semibold italic">
+              “Compliance should empower growth, not create stress.”
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-8">
+              <div className="flex gap-4">
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
+                  <Fingerprint />
+                </div>
+                <div>
+                  <h5 className="font-bold text-slate-900">Custom AI Models</h5>
+                  <p className="text-sm text-slate-500">
+                    Designed specifically for Indian tax regulations.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 shrink-0">
+                  <Activity />
+                </div>
+                <div>
+                  <h5 className="font-bold text-slate-900">Real-Time Insights</h5>
+                  <p className="text-sm text-slate-500">
+                    Monitor compliance health 24/7 with smart dashboards.
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div className="bg-white p-4 rounded-[3rem] shadow-xl border border-slate-100">
+            <img
+              src="https://images.unsplash.com/photo-1551288049-bbbda546697a?auto=format&fit=crop&q=80&w=800"
+              alt="Data Dashboard"
+              className="rounded-[2.5rem] w-full object-cover h-[500px]"
+            />
+          </div>
+
+        </div>
+      </section>
+
+      {/* ================= CORE VALUES ================= */}
+      <section className="py-32 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6 text-center mb-20">
+          <h3 className="text-4xl lg:text-5xl font-black text-slate-900">
+            Everything You Need, <span className="text-blue-600">Automated</span>
+          </h3>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-3 gap-8">
+          {coreValues.map((v, i) => (
+            <div key={i} className="bg-white p-12 rounded-[3rem] border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+              <div className={`w-16 h-16 ${v.color} rounded-2xl flex items-center justify-center mb-8`}>
+                {v.icon}
+              </div>
+              <h4 className="text-2xl font-black text-slate-900 mb-4">{v.title}</h4>
+              <p className="text-slate-500 leading-relaxed">{v.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= FOUNDER ================= */}
+      <section className="py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="bg-slate-900 rounded-[4rem] p-16 lg:p-24 text-white text-center">
+            <Quote className="text-blue-500 mx-auto mb-8" size={60} />
+            <h3 className="text-3xl lg:text-5xl font-bold leading-tight italic mb-10">
+              "Our mission is to make compliance effortless for every Indian entrepreneur.
+              Technology should reduce complexity — not create it."
+            </h3>
+
+            <h5 className="text-2xl font-black">Hitesh Ahuja</h5>
+            <p className="text-blue-400 font-bold uppercase tracking-widest text-sm">
+              Founder & CEO
+            </p>
           </div>
         </div>
       </section>
+
+      {/* ================= FAQ ================= */}
+      <section className="py-24 bg-[#F8FAFC]">
+        <div className="max-w-4xl mx-auto px-6">
+          <h3 className="text-4xl font-black text-center mb-16">
+            Frequently Asked Questions
+          </h3>
+
+          {[
+            {
+              q: "Is E-Filing Cart an AI-only platform?",
+              a: "No. We use AI for speed and precision, but every filing is verified by experienced CAs and compliance professionals."
+            },
+            {
+              q: "How secure is my data?",
+              a: "Your data is protected with enterprise-grade encryption and strict security protocols."
+            },
+            {
+              q: "Do you serve businesses across India?",
+              a: "Yes. We provide fully digital compliance services to businesses across India."
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="bg-white rounded-3xl border border-slate-200 mb-4">
+              <button
+                onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
+                className="w-full flex justify-between p-8 text-left font-bold"
+              >
+                {item.q}
+                {activeFaq === idx ? <Minus /> : <Plus />}
+              </button>
+              <AnimatePresence>
+                {activeFaq === idx && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="px-8 pb-8 text-slate-500"
+                  >
+                    {item.a}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
+      </section>
+
     </div>
   );
 };
