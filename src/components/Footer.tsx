@@ -26,8 +26,8 @@ const footerLinks = [
     links: [
       { name: "About Us", to: "/about" },
       { name: "Contact", to: "/contact" },
-      { name: "Careers", to: "/careers" },
-      { name: "Blog", to: "/blog" }
+      { name: "Careers", to: "#" },
+      { name: "Blog", to: "#" }
     ]
   },
   {

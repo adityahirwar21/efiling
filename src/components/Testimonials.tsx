@@ -4,39 +4,88 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Shalini Prasad",
-    role: "Printing Business Owner",
+    name: "Amit Verma",
+    role: "Retail Store Owner",
     quote:
-      "E-Filing Cart made GST filing extremely easy. I save hours every month.",
-    image: "https://picsum.photos/seed/shalini/100",
+      "GST returns filing is now smooth and completely hassle-free. The support team is very responsive.",
+    image: "https://picsum.photos/seed/amit/100",
   },
   {
-    name: "Manivannan P",
-    role: "Operations Manager",
+    name: "Neha Kulkarni",
+    role: "Chartered Accountant",
     quote:
-      "Compliance processes that took days now take just hours. Highly reliable platform.",
-    image: "https://picsum.photos/seed/manivannan/100",
+      "I recommend E-Filing Cart to my clients regularly. Their compliance tracking system is excellent.",
+    image: "https://picsum.photos/seed/neha/100",
   },
   {
-    name: "Manmohan",
-    role: "Individual Taxpayer",
+    name: "Rakesh Jain",
+    role: "Manufacturing Business Owner",
     quote:
-      "Fast, reliable, and simple. Filing my income tax returns is completely stress-free now.",
-    image: "https://picsum.photos/seed/manmohan/100",
+      "From registration to monthly compliance, everything is handled professionally and on time.",
+    image: "https://picsum.photos/seed/rakesh/100",
   },
   {
-    name: "Rohit Sharma",
-    role: "Startup Founder",
+    name: "Divya Nair",
+    role: "Freelancer",
     quote:
-      "Company registration was completed quickly with proper expert guidance.",
-    image: "https://picsum.photos/seed/rohit/100",
+      "Income tax filing used to stress me out. Now it takes just a few clicks and expert guidance.",
+    image: "https://picsum.photos/seed/divya/100",
   },
   {
-    name: "Priya Mehta",
-    role: "Business Consultant",
+    name: "Sandeep Mishra",
+    role: "E-commerce Seller",
     quote:
-      "Compliance reminders ensure I never miss important GST or ROC deadlines.",
-    image: "https://picsum.photos/seed/priya/100",
+      "Managing GST for multiple states became very easy with their organized dashboard.",
+    image: "https://picsum.photos/seed/sandeep/100",
+  },
+  {
+    name: "Kavita Shah",
+    role: "Startup Co-Founder",
+    quote:
+      "Private limited company registration was completed faster than expected with clear documentation support.",
+    image: "https://picsum.photos/seed/kavita/100",
+  },
+  {
+    name: "Arjun Reddy",
+    role: "Logistics Business Owner",
+    quote:
+      "Their reminders ensure we never miss compliance deadlines. Highly dependable service.",
+    image: "https://picsum.photos/seed/arjun/100",
+  },
+  {
+    name: "Pooja Singh",
+    role: "Consultant",
+    quote:
+      "Professional team, transparent pricing, and quick turnaround. Exactly what businesses need.",
+    image: "https://picsum.photos/seed/pooja/100",
+  },
+  {
+    name: "Vikram Chauhan",
+    role: "IT Services Provider",
+    quote:
+      "ROC compliance and annual filings are handled seamlessly. Saves us valuable time.",
+    image: "https://picsum.photos/seed/vikram/100",
+  },
+  {
+    name: "Sneha Iyer",
+    role: "Boutique Owner",
+    quote:
+      "Very smooth onboarding process and expert guidance throughout GST registration.",
+    image: "https://picsum.photos/seed/sneha/100",
+  },
+  {
+    name: "Harish Patel",
+    role: "Construction Contractor",
+    quote:
+      "Accurate tax calculations and reliable filing services. I trust them completely.",
+    image: "https://picsum.photos/seed/harish/100",
+  },
+  {
+    name: "Meera Joshi",
+    role: "Digital Marketing Agency Owner",
+    quote:
+      "Their compliance support allows me to focus on growing my business without legal worries.",
+    image: "https://picsum.photos/seed/meera/100",
   },
 ];
 

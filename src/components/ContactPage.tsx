@@ -15,11 +15,9 @@ export const ContactPage = () => {
 
       {/* HERO */}
       <section className="relative overflow-hidden bg-slate-950 py-28 text-white">
-
         <div className="absolute left-1/2 -translate-x-1/2 top-0 w-[800px] h-[400px] bg-brand-blue/20 blur-[140px] pointer-events-none" />
 
         <div className="relative mx-auto max-w-4xl px-6 text-center">
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -40,7 +38,6 @@ export const ContactPage = () => {
             Whether it's company registration, GST filing, or tax compliance —
             our experts at E-Filing Cart are ready to assist you.
           </motion.p>
-
         </div>
       </section>
 
@@ -126,48 +123,71 @@ export const ContactPage = () => {
 
               <div className="space-y-8">
 
-                {[
-                  {
-                    icon: Phone,
-                    title: "Call Support",
-                    content: "+91 98267 65899",
-                    sub: "Mon–Sat, 9 AM – 7 PM"
-                  },
-                  {
-                    icon: Mail,
-                    title: "Email Us",
-                    content: "info@efilingcart.com",
-                    sub: "Fast response guaranteed"
-                  },
-                  {
-                    icon: MessageSquare,
-                    title: "WhatsApp Assistance",
-                    content: "Chat with Compliance Expert",
-                    sub: "Instant business support"
-                  },
-                  {
-                    icon: MapPin,
-                    title: "Head Office",
-                    content: "India (Serving Nationwide)",
-                    sub: "100% Digital Platform"
-                  }
-                ].map((item, index) => {
-                  const Icon = item.icon;
-                  return (
-                    <div key={index} className="flex gap-5 items-start">
-                      <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
-                        <Icon size={22} />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-slate-900">
-                          {item.title}
-                        </h4>
-                        <p className="text-slate-700">{item.content}</p>
-                        <p className="text-sm text-slate-500">{item.sub}</p>
-                      </div>
-                    </div>
-                  );
-                })}
+                {/* Phone */}
+                <div className="flex gap-5 items-start">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                    <Phone size={22} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">
+                      Call Support
+                    </h4>
+                    <p className="text-slate-700">+91 98267 65899</p>
+                    <p className="text-sm text-slate-500">
+                      Mon–Sat, 9 AM – 7 PM
+                    </p>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex gap-5 items-start">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                    <Mail size={22} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">
+                      Email Us
+                    </h4>
+                    <p className="text-slate-700">
+                      info@efilingcart.com
+                    </p>
+                    <p className="text-sm text-slate-500">
+                      Fast response guaranteed
+                    </p>
+                  </div>
+                </div>
+
+                {/* Address 1 */}
+                <div className="flex gap-5 items-start">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                    <MapPin size={22} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">
+                      Branch Office – Jabalpur
+                    </h4>
+                    <p className="text-slate-700">
+                      Madan Mahal, Jabalpur,<br />
+                      Madhya Pradesh – 482001
+                    </p>
+                  </div>
+                </div>
+
+                {/* Address 2 */}
+                <div className="flex gap-5 items-start">
+                  <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
+                    <MapPin size={22} />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">
+                      Branch Office – Indore
+                    </h4>
+                    <p className="text-slate-700">
+                      Scheme 78, Vijay Nagar, Indore,<br />
+                      Madhya Pradesh – 452010
+                    </p>
+                  </div>
+                </div>
 
               </div>
 
@@ -208,16 +228,29 @@ export const ContactPage = () => {
         </div>
       </section>
 
-      {/* MAP */}
-      <section className="h-[400px] w-full grayscale hover:grayscale-0 transition duration-500">
+      {/* MAP SECTION */}
+      <section className="grid md:grid-cols-2 h-[400px]">
+
+        {/* Jabalpur Map */}
         <iframe
-          src="https://maps.google.com/maps?q=India&t=&z=5&ie=UTF8&iwloc=&output=embed"
+          src="https://maps.google.com/maps?q=Madan%20Mahal%20Jabalpur%20482001&t=&z=13&ie=UTF8&iwloc=&output=embed"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           loading="lazy"
-          title="India Location"
+          title="Jabalpur Location"
         />
+
+        {/* Indore Map */}
+        <iframe
+          src="https://maps.google.com/maps?q=Scheme%2078%20Vijay%20Nagar%20Indore%20452010&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          loading="lazy"
+          title="Indore Location"
+        />
+
       </section>
 
     </div>

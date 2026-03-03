@@ -1,13 +1,28 @@
 import React from "react";
 import { motion } from "motion/react";
 
+// ✅ IMPORT IMAGES PROPERLY
+import client1 from "../assets/client-1.png";
+import client2 from "../assets/client-2.png";
+import client3 from "../assets/client-3.png";
+import client4 from "../assets/client-4.png";
+import client5 from "../assets/client-5.png";
+import client6 from "../assets/client-6.png";
+import client7 from "../assets/client-7.png";
+import client8 from "../assets/client-8.png";
+import client9 from "../assets/client-9.png";
+import client10 from "../assets/client-10.png";
+
 const brands = [
-  { name: "TechFlow", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d3/1xBet-Logo.png" },
-  { name: "CloudScale", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d3/1xBet-Logo.png" },
-  { name: "DataNexus", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d3/1xBet-Logo.png" },
-  { name: "BioGen", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d3/1xBet-Logo.png" },
-  { name: "EcoSmart", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d3/1xBet-Logo.png" },
-  { name: "FinLeap", logo: "https://upload.wikimedia.org/wikipedia/commons/d/d3/1xBet-Logo.png" }
+  { name: "CloudScale", logo: client2 },
+  { name: "DataNexus", logo: client3 },
+  { name: "BioGen", logo: client4 },
+  { name: "EcoSmart", logo: client5 },
+  { name: "FinLeap", logo: client6 },
+  { name: "FinLeap", logo: client7 },
+  { name: "FinLeap", logo: client8 },
+  { name: "FinLeap", logo: client9 },
+  { name: "FinLeap", logo: client10 },
 ];
 
 export const BrandLogos = () => {
@@ -16,21 +31,16 @@ export const BrandLogos = () => {
 
       <div className="relative max-w-7xl mx-auto px-6">
 
-        {/* Header */}
         <div className="text-center mb-12">
-
           <h3 className="text-xl font-semibold text-slate-700">
             Powering India’s Fastest Growing Businesses
           </h3>
         </div>
 
-        {/* Marquee */}
         <div className="relative">
 
-          {/* Fade Left */}
           <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
 
-          {/* Fade Right */}
           <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
           <div className="overflow-hidden">
@@ -52,7 +62,8 @@ export const BrandLogos = () => {
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="max-h-10 object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300"
+                    loading="lazy"
+                    className="max-h-40 object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition duration-300"
                   />
                 </div>
               ))}
