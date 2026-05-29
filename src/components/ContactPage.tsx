@@ -22,7 +22,7 @@ export const ContactPage = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl lg:text-6xl font-bold"
           >
-            Let’s Simplify Your
+            Let’s Simplify Your{" "}
             <span className="block text-brand-blue">
               Compliance Journey
             </span>
@@ -47,114 +47,98 @@ export const ContactPage = () => {
 
             {/* FORM */}
             <motion.div
-initial={{ opacity: 0, x: -40 }}
-whileInView={{ opacity: 1, x: 0 }}
-viewport={{ once: true }}
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <form
+                action="[https://api.web3forms.com/submit](https://api.web3forms.com/submit)"
+                method="POST"
+                className="bg-white rounded-3xl shadow-xl border border-slate-200 p-10 lg:p-12"
+              >
+                {/* Web3Forms Configuration */}
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="d2477a59-483e-4eab-bc85-694906cecff1"
+                />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="New Inquiry - EfilingCart Website"
+                />
+                <input
+                  type="hidden"
+                  name="from_name"
+                  value="EfilingCart Website"
+                />
 
->
+                <h2 className="text-3xl font-bold text-slate-900">
+                  Get in Touch
+                </h2>
+                <p className="mt-3 text-slate-500 text-sm">
+                  Our team typically responds within 2–12 hours.
+                </p>
 
-  <form
-    action="https://api.web3forms.com/submit"
-    method="POST"
-    className="bg-white rounded-3xl shadow-xl border border-slate-200 p-10 lg:p-12"
-  >
-    {/* Web3Forms Configuration */}
+                <div className="mt-10 space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-6">
+                    <input
+                      type="text"
+                      name="first_name"
+                      placeholder="First Name"
+                      required
+                      className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
+                    />
+                    <input
+                      type="text"
+                      name="last_name"
+                      placeholder="Last Name"
+                      required
+                      className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
+                    />
+                  </div>
 
-```
-<input
-  type="hidden"
-  name="access_key"
-  value="d2477a59-483e-4eab-bc85-694906cecff1"
-/>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    required
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
+                  />
 
-<input
-  type="hidden"
-  name="subject"
-  value="New Inquiry - EfilingCart Website"
-/>
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number"
+                    required
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
+                  />
 
-<input
-  type="hidden"
-  name="from_name"
-  value="EfilingCart Website"
-/>
+                  <textarea
+                    name="message"
+                    rows={5}
+                    placeholder="Tell us about your requirement..."
+                    required
+                    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
+                  />
 
-<h2 className="text-3xl font-bold text-slate-900">
-  Get in Touch
-</h2>
+                  <button
+                    type="submit"
+                    className="w-full flex items-center justify-center gap-2 rounded-xl bg-brand-blue px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-2xl hover:scale-[1.02] transition"
+                  >
+                    Submit Request
+                    <ArrowRight size={18} />
+                  </button>
 
-<p className="mt-3 text-slate-500 text-sm">
-  Our team typically responds within 2–12 hours.
-</p>
-
-<div className="mt-10 space-y-6">
-
-  <div className="grid sm:grid-cols-2 gap-6">
-    <input
-      type="text"
-      name="first_name"
-      placeholder="First Name"
-      required
-      className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
-    />
-
-    <input
-      type="text"
-      name="last_name"
-      placeholder="Last Name"
-      required
-      className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
-    />
-  </div>
-
-  <input
-    type="email"
-    name="email"
-    placeholder="Email Address"
-    required
-    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
-  />
-
-  <input
-    type="tel"
-    name="phone"
-    placeholder="Phone Number"
-    required
-    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
-  />
-
-  <textarea
-    name="message"
-    rows={5}
-    placeholder="Tell us about your requirement..."
-    required
-    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
-  />
-
-  <button
-    type="submit"
-    className="w-full flex items-center justify-center gap-2 rounded-xl bg-brand-blue px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-2xl hover:scale-[1.02] transition"
-  >
-    Submit Request
-    <ArrowRight size={18} />
-  </button>
-
-  <p className="text-xs text-slate-400 text-center">
-    🔒 Your data is encrypted and 100% confidential.
-  </p>
-
-</div>
-```
-
-  </form>
-</motion.div>
-
-
-
+                  <p className="text-xs text-slate-400 text-center">
+                    🔒 Your data is encrypted and 100% confidential.
+                  </p>
+                </div>
+              </form>
+            </motion.div>
 
             {/* INFO SIDE */}
             <div className="flex flex-col justify-center space-y-14">
-
               <div>
                 <h2 className="text-3xl font-bold text-slate-900">
                   Contact Details
@@ -165,7 +149,6 @@ viewport={{ once: true }}
               </div>
 
               <div className="space-y-8">
-
                 {/* Phone */}
                 <div className="flex gap-5 items-start">
                   <div className="w-12 h-12 rounded-2xl bg-brand-blue/10 flex items-center justify-center text-brand-blue">
@@ -231,7 +214,6 @@ viewport={{ once: true }}
                     </p>
                   </div>
                 </div>
-
               </div>
 
               {/* Office Hours */}
@@ -264,7 +246,6 @@ viewport={{ once: true }}
                   </div>
                 </div>
               </div>
-
             </div>
 
           </div>
@@ -273,27 +254,27 @@ viewport={{ once: true }}
 
       {/* MAP SECTION */}
       <section className="grid md:grid-cols-2 h-[400px]">
-
         {/* Jabalpur Map */}
         <iframe
-          src="https://maps.google.com/maps?q=Madan%20Mahal%20Jabalpur%20482001&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          src="[https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.447547940176!2d79.9127599!3d23.1538466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ae1767cdb101%3A0xa19bf9b9fbfa44e4!2sMadan%20Mahal%2C%20Jabalpur%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin](https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.447547940176!2d79.9127599!3d23.1538466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ae1767cdb101%3A0xa19bf9b9fbfa44e4!2sMadan%20Mahal%2C%20Jabalpur%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin)"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           loading="lazy"
           title="Jabalpur Location"
+          allowFullScreen
         />
 
         {/* Indore Map */}
         <iframe
-          src="https://maps.google.com/maps?q=Scheme%2078%20Vijay%20Nagar%20Indore%20452010&t=&z=13&ie=UTF8&iwloc=&output=embed"
+          src="[https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.3286762391054!2d75.8938495!3d22.7532292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd36cbba6981%3A0x6fb0d7a6e1180fb2!2sVijay%20Nagar%2C%20Indore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000001!5m2!1sen!2sin](https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.3286762391054!2d75.8938495!3d22.7532292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd36cbba6981%3A0x6fb0d7a6e1180fb2!2sVijay%20Nagar%2C%20Indore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000001!5m2!1sen!2sin)"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           loading="lazy"
           title="Indore Location"
+          allowFullScreen
         />
-
       </section>
 
     </div>
