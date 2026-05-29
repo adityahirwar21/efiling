@@ -54,39 +54,29 @@ viewport={{ once: true }}
 >
 
   <form
-    action="https://formsubmit.co/info@efilingcart.com"
+    action="https://api.web3forms.com/submit"
     method="POST"
     className="bg-white rounded-3xl shadow-xl border border-slate-200 p-10 lg:p-12"
   >
-    {/* FormSubmit Configuration */}
-    <input
-      type="hidden"
-      name="_subject"
-      value="New Inquiry - EfilingCart Website"
-    />
+    {/* Web3Forms Configuration */}
 
+```
 <input
   type="hidden"
-  name="_captcha"
-  value="false"
+  name="access_key"
+  value="d2477a59-483e-4eab-bc85-694906cecff1"
 />
 
 <input
   type="hidden"
-  name="_template"
-  value="table"
+  name="subject"
+  value="New Inquiry - EfilingCart Website"
 />
 
 <input
   type="hidden"
-  name="_next"
-  value="https://efilingcart.com/contact"
-/>
-
-<input
-  type="text"
-  name="_honey"
-  style={{ display: "none" }}
+  name="from_name"
+  value="EfilingCart Website"
 />
 
 <h2 className="text-3xl font-bold text-slate-900">
@@ -154,9 +144,11 @@ viewport={{ once: true }}
   </p>
 
 </div>
+```
 
   </form>
 </motion.div>
+
 
 
 
