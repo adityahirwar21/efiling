@@ -46,7 +46,7 @@ export const ContactPage = () => {
           <div className="grid lg:grid-cols-2 gap-20">
 
             {/* FORM */}
-<motion.div
+            <motion.div
 initial={{ opacity: 0, x: -40 }}
 whileInView={{ opacity: 1, x: 0 }}
 viewport={{ once: true }}
@@ -58,7 +58,7 @@ viewport={{ once: true }}
     method="POST"
     className="bg-white rounded-3xl shadow-xl border border-slate-200 p-10 lg:p-12"
   >
-    {/* FormSubmit Settings */}
+    {/* FormSubmit Configuration */}
     <input
       type="hidden"
       name="_subject"
@@ -76,6 +76,18 @@ viewport={{ once: true }}
   type="hidden"
   name="_template"
   value="table"
+/>
+
+<input
+  type="hidden"
+  name="_next"
+  value="https://efilingcart.com/contact"
+/>
+
+<input
+  type="text"
+  name="_honey"
+  style={{ display: "none" }}
 />
 
 <h2 className="text-3xl font-bold text-slate-900">
@@ -124,7 +136,7 @@ viewport={{ once: true }}
 
   <textarea
     name="message"
-    rows={4}
+    rows={5}
     placeholder="Tell us about your requirement..."
     required
     className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
@@ -147,6 +159,7 @@ viewport={{ once: true }}
 
   </form>
 </motion.div>
+
 
 
             {/* INFO SIDE */}
