@@ -4,7 +4,6 @@ import {
   Mail,
   Phone,
   MapPin,
-  MessageSquare,
   Clock,
   ArrowRight
 } from "lucide-react";
@@ -47,67 +46,114 @@ export const ContactPage = () => {
           <div className="grid lg:grid-cols-2 gap-20">
 
             {/* FORM */}
-            <motion.div
-              initial={{ opacity: 0, x: -40 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="bg-white rounded-3xl shadow-xl border border-slate-200 p-10 lg:p-12"
-            >
-              <h2 className="text-3xl font-bold text-slate-900">
-                Get in Touch
-              </h2>
+            <form
+  action="https://formsubmit.co/info@efilingcart.com"
+  method="POST"
+>
+            {/* FORM */}
+<motion.div
+initial={{ opacity: 0, x: -40 }}
+whileInView={{ opacity: 1, x: 0 }}
+viewport={{ once: true }}
 
-              <p className="mt-3 text-slate-500 text-sm">
-                Our team typically responds within 2–12 hours.
-              </p>
+>
 
-              <form className="mt-10 space-y-6">
+  <form
+    action="https://formsubmit.co/info@efilingcart.com"
+    method="POST"
+    className="bg-white rounded-3xl shadow-xl border border-slate-200 p-10 lg:p-12"
+  >
+    {/* FormSubmit Settings */}
+    <input
+      type="hidden"
+      name="_subject"
+      value="New Inquiry - EfilingCart Website"
+    />
 
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <input
-                    type="text"
-                    placeholder="First Name"
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
-                  />
-                  <input
-                    type="text"
-                    placeholder="Last Name"
-                    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
-                  />
-                </div>
+```
+<input
+  type="hidden"
+  name="_captcha"
+  value="false"
+/>
 
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
-                />
+<input
+  type="hidden"
+  name="_template"
+  value="table"
+/>
 
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
-                />
+<h2 className="text-3xl font-bold text-slate-900">
+  Get in Touch
+</h2>
 
-                <textarea
-                  rows={4}
-                  placeholder="Tell us about your requirement..."
-                  className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
-                />
+<p className="mt-3 text-slate-500 text-sm">
+  Our team typically responds within 2–12 hours.
+</p>
 
-                <button
-                  type="submit"
-                  className="w-full flex items-center justify-center gap-2 rounded-xl bg-brand-blue px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-2xl hover:scale-[1.02] transition"
-                >
-                  Submit Request
-                  <ArrowRight size={18} />
-                </button>
+<div className="mt-10 space-y-6">
 
-                <p className="text-xs text-slate-400 text-center">
-                  🔒 Your data is encrypted and 100% confidential.
-                </p>
+  <div className="grid sm:grid-cols-2 gap-6">
+    <input
+      type="text"
+      name="first_name"
+      placeholder="First Name"
+      required
+      className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
+    />
 
-              </form>
-            </motion.div>
+    <input
+      type="text"
+      name="last_name"
+      placeholder="Last Name"
+      required
+      className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
+    />
+  </div>
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Email Address"
+    required
+    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
+  />
+
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Phone Number"
+    required
+    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
+  />
+
+  <textarea
+    name="message"
+    rows={4}
+    placeholder="Tell us about your requirement..."
+    required
+    className="w-full rounded-xl border border-slate-200 px-4 py-3 focus:outline-none focus:border-brand-blue transition"
+  />
+
+  <button
+    type="submit"
+    className="w-full flex items-center justify-center gap-2 rounded-xl bg-brand-blue px-8 py-4 text-lg font-semibold text-white shadow-lg hover:shadow-2xl hover:scale-[1.02] transition"
+  >
+    Submit Request
+    <ArrowRight size={18} />
+  </button>
+
+  <p className="text-xs text-slate-400 text-center">
+    🔒 Your data is encrypted and 100% confidential.
+  </p>
+
+</div>
+```
+
+  </form>
+</motion.div>
+
+            </form>
 
             {/* INFO SIDE */}
             <div className="flex flex-col justify-center space-y-14">
