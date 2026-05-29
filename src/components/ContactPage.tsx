@@ -46,11 +46,6 @@ export const ContactPage = () => {
           <div className="grid lg:grid-cols-2 gap-20">
 
             {/* FORM */}
-            <form
-  action="https://formsubmit.co/info@efilingcart.com"
-  method="POST"
->
-            {/* FORM */}
 <motion.div
 initial={{ opacity: 0, x: -40 }}
 whileInView={{ opacity: 1, x: 0 }}
@@ -153,7 +148,6 @@ viewport={{ once: true }}
   </form>
 </motion.div>
 
-            </form>
 
             {/* INFO SIDE */}
             <div className="flex flex-col justify-center space-y-14">
