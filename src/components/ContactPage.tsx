@@ -65,7 +65,6 @@ viewport={{ once: true }}
       value="New Inquiry - EfilingCart Website"
     />
 
-```
 <input
   type="hidden"
   name="_captcha"
@@ -155,7 +154,6 @@ viewport={{ once: true }}
   </p>
 
 </div>
-```
 
   </form>
 </motion.div>
