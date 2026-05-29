@@ -52,7 +52,7 @@ export const ContactPage = () => {
               viewport={{ once: true }}
             >
               <form
-                action="[https://api.web3forms.com/submit](https://api.web3forms.com/submit)"
+                action="https://api.web3forms.com/submit](https://api.web3forms.com/submit"
                 method="POST"
                 className="bg-white rounded-3xl shadow-xl border border-slate-200 p-10 lg:p-12"
               >
@@ -256,7 +256,7 @@ export const ContactPage = () => {
       <section className="grid md:grid-cols-2 h-[400px]">
         {/* Jabalpur Map */}
         <iframe
-          src="[https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.447547940176!2d79.9127599!3d23.1538466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ae1767cdb101%3A0xa19bf9b9fbfa44e4!2sMadan%20Mahal%2C%20Jabalpur%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin](https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.447547940176!2d79.9127599!3d23.1538466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ae1767cdb101%3A0xa19bf9b9fbfa44e4!2sMadan%20Mahal%2C%20Jabalpur%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin)"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.447547940176!2d79.9127599!3d23.1538466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ae1767cdb101%3A0xa19bf9b9fbfa44e4!2sMadan%20Mahal%2C%20Jabalpur%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin](https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.447547940176!2d79.9127599!3d23.1538466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ae1767cdb101%3A0xa19bf9b9fbfa44e4!2sMadan%20Mahal%2C%20Jabalpur%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
           width="100%"
           height="100%"
           style={{ border: 0 }}
@@ -267,7 +267,7 @@ export const ContactPage = () => {
 
         {/* Indore Map */}
         <iframe
-          src="[https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.3286762391054!2d75.8938495!3d22.7532292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd36cbba6981%3A0x6fb0d7a6e1180fb2!2sVijay%20Nagar%2C%20Indore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000001!5m2!1sen!2sin](https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.3286762391054!2d75.8938495!3d22.7532292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd36cbba6981%3A0x6fb0d7a6e1180fb2!2sVijay%20Nagar%2C%20Indore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000001!5m2!1sen!2sin)"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.3286762391054!2d75.8938495!3d22.7532292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd36cbba6981%3A0x6fb0d7a6e1180fb2!2sVijay%20Nagar%2C%20Indore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000001!5m2!1sen!2sin](https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.3286762391054!2d75.8938495!3d22.7532292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd36cbba6981%3A0x6fb0d7a6e1180fb2!2sVijay%20Nagar%2C%20Indore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1710000000001!5m2!1sen!2sin"
           width="100%"
           height="100%"
           style={{ border: 0 }}
