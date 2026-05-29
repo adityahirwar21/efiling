@@ -52,7 +52,7 @@ export const ContactPage = () => {
               viewport={{ once: true }}
             >
               <form
-                action="https://api.web3forms.com/submit](https://api.web3forms.com/submit"
+                action="https://api.web3forms.com/submit"
                 method="POST"
                 className="bg-white rounded-3xl shadow-xl border border-slate-200 p-10 lg:p-12"
               >
