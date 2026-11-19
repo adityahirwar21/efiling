@@ -60,7 +60,7 @@ export const HomePage = () => {
           {/* ================= FEATURE PILLS ================= */}
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             {[
-              "GST Registration & Filing",
+              "GST Registrations & Filing",
               "Private Limited & LLP Registration",
               "Trademark Registration",
             ].map((feature, index) => (
