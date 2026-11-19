@@ -1177,7 +1177,7 @@ export const categories: Category[] = [
       category: "compliance",
       description: "Annual Foreign Liabilities and Assets return filing with RBI.",
       heroTitle: "FLA Return Filing",
-      heroSubtitle: "Mandatory RBI annual compliance.",
+      heroSubtitle: "Mandatory RBI annual compliance",
       highlights: ["RBI Filing", "Annual Compliance"],
       documents: ["Financial Statements", "FDI Details"],
       pricing: { marketRate: 10000, ourPrice: 5999, label: "FLA Filing", savingsPercentage: "40%" },
