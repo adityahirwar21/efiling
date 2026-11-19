@@ -1154,7 +1154,7 @@ export const categories: Category[] = [
       faqs: [{ question: "Time limit?", answer: "Within 180 days of incorporation." }]
     }
   ]
-},,
+},
 {
   id: "compliance",
   name: "Compliance",
